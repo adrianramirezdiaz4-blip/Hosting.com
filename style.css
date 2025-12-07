@@ -1,0 +1,67 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #fff;
+  background: url('fondo-los-santos.jpg') center/cover no-repeat fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.55); z-index: 0; }
+
+.hero {
+  text-align: center;
+  padding: 48px 16px 8px;
+  position: relative;
+  z-index: 1;
+}
+.hero h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 1px; }
+.subtitle { opacity: 0.9; margin: 0 0 8px; }
+.meta { opacity: 0.85; font-size: 14px; }
+
+.container { max-width: 1100px; margin: 24px auto; padding: 16px; position: relative; z-index: 1; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border-radius: 12px;
+  padding: 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(0,0,0,0.5); }
+
+.card img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+.card h3 { margin: 6px 0; font-size: 18px; }
+.card ul { margin: 6px 0 12px 18px; padding: 0; font-size: 14px; color: #e8f0ff; }
+.price { margin-top: auto; font-weight: 700; padding: 10px 0; font-size: 16px; text-align: center; background: rgba(0,0,0,0.18); border-radius: 8px; }
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg,#2fb6ff,#0066ff);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .15s ease, transform .12s ease;
+}
+button:hover { opacity: 0.95; transform: translateY(-2px); }
+
+.ports { margin-top: 8px; background: rgba(255,255,255,0.03); padding: 14px; border-radius: 10px; }
+.port-grid { display:flex; gap:12px; flex-wrap:wrap; margin-top: 12px; }
+.port-card { background: rgba(0,0,0,0.2); padding:10px; border-radius:8px; flex:1 1 180px; min-width:160px; text-align:center; }
+
+.footer { text-align:center; padding:24px 10px; opacity:0.8; z-index:1; position:relative; }
+@media (max-width:600px){ .hero h1{font-size:20px;} .card img{height:100px;} }

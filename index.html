@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Título Dinámico</title>
+  <style>
+    #tituloDinamico {
+      font-size: 3em; /* Ajusta el tamaño como quieras */
+      transition: color 1s ease-in-out; /* Transición suave */
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="tituloDinamico">CDS COMPANY HOSTING</h1>
+
+  <script>
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function cambiarColor() {
+      const titulo = document.getElementById('tituloDinamico');
+      titulo.style.color = getRandomColor();
+    }
+
+    setInterval(cambiarColor, 500); // Cambia el color cada 2 segundos
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CDS Company Hosting - Precios SA-MP</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="overlay"></div>
+    <header class="hero">
+        <h1>PRECIOS SA-MP — CDS COMPANY HOSTING</h1>
+        <p class="subtitle">Hosting con rendimiento profesional y soporte activo</p>
+        
+        <div class="meta">
+            <span id="fecha"></span> · <span id="hora"></span> · <span id="ocasion"></span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="cards">
+            <!-- Planes: each card keeps an image and details -->
+            <article class="card">
+                <img src="plan-image.jpg" alt="SA-MP #1" />
+                <h3>SA-MP #1</h3>
+                <ul>
+                    <li>Ram ilimitada</li>
+                    <li>SSD ilimitado</li>
+                    <li>1 Datasca</li>
+                    <li>1 Copia de ración</li>
+                    <li>50 Slots</li>
+                </ul>
+                <div class="price">$1 USD / 4.000 COP</div>
+                <button onclick="confirmarCompra('SA-MP #1','$1 USD / 4.000 COP')">Comprar</button>
+            </article>
+
+            <article class="card">
+                <img src="plan-image.jpg" alt="SA-MP #2" />
+                <h3>SA-MP #2</h3>
+                <ul>
+                    <li>Ram ilimitada</li>
+                    <li>SSD ilimitado</li>
+                    <li>1 BD</li>
+                    <li>2 Copias de seguridad</li>
+                    <li>100 Slots</li>
+                    <li>2 Unidades GM</li>
+                </ul>
+                <div class="price">$2.80 USD / 11.200 COP</div>
+                <button onclick="confirmarCompra('SA-MP #2','$2.80 USD / 11.200 COP')">Comprar</button>
+            </article>
+
+            <article class="card">
+                <img src="plan-image.jpg" alt="SA-MP #3" />
+                <h3>SA-MP #3</h3>
+                <ul>
+                    <li>Ram ilimitada</li>
+                    <li>SSD ilimitado</li>
+                    <li>1 BD</li>
+                    <li>2 Copias de seguridad</li>
+                    <li>100 Slots</li>
+                    <li>2 Unidades GM</li>
+                </ul>
+                <div class="price">$3.40 USD / 11.200 COP</div>
+                <button onclick="confirmarCompra('SA-MP #3','$3.40 USD / 11.200 COP')">Comprar</button>
+            </article>
+
+            <article class="card">
+                <img src="plan-image.jpg" alt="SA-MP #4" />
+                <h3>SA-MP #4</h3>
+                <ul>
+                    <li>Ram ilimitada</li>
+                    <li>SSD ilimitado</li>
+                    <li>2 BD</li>
+                    <li>2 Copias de seguridad</li>
+                    <li>150 Slots</li>
+                    <li>2 Subida GM</li>
+                </ul>
+                <div class="price">$3.30 USD / 13.300 COP</div>
+                <button onclick="confirmarCompra('SA-MP #4','$3.30 USD / 13.300 COP')">Comprar</button>
+            </article>
+
+            <article class="card">
+                <img src="plan-image.jpg" alt="SA-MP #5" />
+                <h3>SA-MP #5</h3>
+                <ul>
+                    <li>Ram ilimitada</li>
+                    <li>SSD ilimitado</li>
+                    <li>3 BD</li>
+                    <li>4 Copias de seguridad</li>
+                    <li>200 Slots</li>
+                    <li>2 Subidas GM</li>
+                </ul>
+                <div class="price">$4.20 USD / 17.200 COP</div>
+                <button onclick="confirmarCompra('SA-MP #5','$4.20 USD / 17.200 COP')">Comprar</button>
+            </article>
+
+            <article class="card">
+                <img src="plan-image.jpg" alt="SA-MP #7" />
+                <h3>SA-MP #7</h3>
+                <ul>
+                    <li>Ram ilimitada</li>
+                    <li>SSD ilimitado</li>
+                    <li>5 BD</li>
+                    <li>5 Copias de seguridad</li>
+                    <li>200 Slots</li>
+                    <li>5 Subidas GM</li>
+                </ul>
+                <div class="price">$6.50 USD / 23.200 COP</div>
+                <button onclick="confirmarCompra('SA-MP #7','$6.50 USD / 23.200 COP')">Comprar</button>
+            </article>
+        </section>
+
+        <section class="ports">
+            <h2>Puertos adicionales (válidos después del segundo plan)</h2>
+            <div class="port-grid">
+                <div class="port-card">
+                    <h4>Puerto 7777</h4>
+                    <p>$3.5 USD / 18.000 COP</p>
+                    <button onclick="confirmarCompra('Puerto 7777','$3.5 USD / 18.000 COP')">Comprar</button>
+                </div>
+                <div class="port-card">
+                    <h4>Puerto 9999</h4>
+                    <p>$2.5 USD / 10.000 COP</p>
+                    <button onclick="confirmarCompra('Puerto 9999','$2.5 USD / 10.000 COP')">Comprar</button>
+                </div>
+                <div class="port-card">
+                    <h4>Puerto 8888</h4>
+                    <p>$1.5 USD / 6.000 COP</p>
+                    <button onclick="confirmarCompra('Puerto 8888','$1.5 USD / 6.000 COP')">Comprar</button>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>PAGOS</p>
+        <img src="Image 7 dic 2025, 00_12_59.png" alt="PAGOS" />
+        <p>© CDS Company Hosting</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
